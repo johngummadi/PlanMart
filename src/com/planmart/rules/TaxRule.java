@@ -38,7 +38,7 @@ public class TaxRule implements Rule {
              *      * Food items shipped to CA, NY
              *      * Clothing items shipped to CT
              */
-            if ((item.getProduct().getType() == ProductType.FOOD && (shippingRegion == "CA" || shippingRegion== "NY")) ||
+            if ((item.getProduct().getType() == ProductType.FOOD && shippingRegion.matches("CA|NY")) ||
                 ((item.getProduct().getType() == ProductType.CLOTHING && shippingRegion == "CT"))) {
                 taxPer = 0;
             }

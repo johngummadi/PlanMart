@@ -2,6 +2,8 @@ package com.planmart;
 
 import com.orderprocessing.BaseOrderProcessor;
 import com.orderprocessing.Rule;
+import com.planmart.rules.RewardPointsRule;
+import com.planmart.rules.ShippingRule;
 import com.planmart.rules.TaxRule;
 
 import java.util.ArrayList;
@@ -18,6 +20,8 @@ public class PlanMartOrderProcessor extends BaseOrderProcessor {
          * Add all rules for the processor here
          */
         _rules.add(new TaxRule());
+        _rules.add(new ShippingRule());
+        _rules.add(new RewardPointsRule());
     }
 
 
