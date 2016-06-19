@@ -34,7 +34,8 @@ public class Main {
 
         Assert(isValid);
         Assert(tax.isPresent());
-        Assert(new BigDecimal(10.80).equals(tax.get().getAmount()));
+        //Assert(new BigDecimal(10.80).equals(tax.get().getAmount())); // This test case is wrong.
+        Assert((new BigDecimal(10.80).setScale(2, BigDecimal.ROUND_HALF_UP)).equals(tax.get().getAmount()));
         Assert(shipping.isPresent());
         Assert(new BigDecimal(10).equals(shipping.get().getAmount()));
         Assert(rewardPoints.isPresent());
